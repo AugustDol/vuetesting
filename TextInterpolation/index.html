@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My first Vue page</title>
 </head>
+
 <body>
-    
+
+    // Text interpolation
+
+    <div id="peepee">
+        {{ message }} <br>
+        {{'Random number: ' + Math.random()*6 }} <br> <br>
+        {{ test123 }}
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        /* This line creates a new Vue application. The createApp function is a global 
+        method provided by Vue.js that is used to create a new application instance. 
+        The argument to createApp is an object that defines the options for the Vue application. */
+
+        const app = Vue.createApp({
+            /*The data function is a Vue.js option that is used to 
+            store the properties that the Vue instance will react to.*/
+            data() {
+                return {
+                    message: "Hello World!",
+                    test123: "a12983798123"
+                }
+            }
+        })
+
+        app.mount('#peepee')
+
+    </script>
 </body>
+
 </html>

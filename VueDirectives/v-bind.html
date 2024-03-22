@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    ****************** v-bind *****************
+    v-bind connects an attribute in an HTML tag 
+    to a data variable inside the Vue instance.
+    *******************************************
+-->
+
+<head>
+    <style>
+        /* this created a class named pinkBG */
+        .pinkBG {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- v-bind:class="vueClass" binds the class attribute of the div 
+        element to the vueClass data property of the Vue.js application. -->
+
+        <!-- it's equal as writing <div class="blabla"> but it's not dynamic. -->
+
+        <div v-bind:class="classVue123"></div>
+
+        <!--
+            It has the same propreties as a string, but it's dynamic.
+        -->
+        <div v-bind:style="{ fontSize : size + 'px' }">
+            Text example
+        </div>
+
+        <div v-bind:style="{ backgroundColor: 'hsl('+bgVal+',80%,80%)' }">
+            Notice the background color on this div tag.
+        </div>
+        <br>
+        <!--
+            The shorthand for 'v-bind:' is simply ':'.
+        -->
+        <div :style="{ backgroundColor: isImportant ? 'lightcoral' : 'lightgray' }">
+            Conditional background color
+        </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    classVue123: "pinkBG",
+                    size: "50",
+                    bgVal: "100",
+                    isImportant: false
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

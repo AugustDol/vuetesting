@@ -4,3 +4,8 @@ This project is a simple Vue.js application designed as a learning demo for Vue.
 
 more comming soon...
 
+to see where i left off click 
+[HERE](https://www.w3schools.com/vue/vue_v-if.php).
+
+:)
+
