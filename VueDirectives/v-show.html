@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+
+<head>
+    <html lang="en">
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-show="show">Hello World</h1>
+        <button v-on:click="toggle">Toggle</button>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: true
+            },
+            methods: {
+                toggle() {
+                    this.show = !this.show;
+                }
+            }
+        });
+    </script>
+</body>
