@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            /* Change the font */
+
+        }
+
+        .butt {
+            background-color: lightblue;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        #clickme {
+            user-select: none;
+            font-size: 2em;
+            /* Make the text larger */
+
+            font-family: 'Arial', sans-serif;
+            /* Change the font */
+            text-shadow: 2px 2px 4px #0000007d;
+            /* Add a text shadow */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="!started">
+            <h1>Vediamo se sei figo</h1>
+        </div>
+        <div v-if="seifigo && started">
+            <h1>sei un figo😎</h1>
+        </div>
+        <div v-else-if="!seifigo && started">
+            <h1>non sei figo😔</h1>
+        </div>
+
+        <div v-bind:class="clas" v-on:click="random">
+            <div id="clickme">push me</div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    started: false,
+                    seifigo: false,
+                    randomVal: Math.random(),
+                    clas: "butt"
+                }
+            },
+
+            methods: {
+                random() {
+                    this.seifigo = this.randomVal > 0.5;
+                    this.randomVal = Math.random();
+                    this.started = true;
+                    console.log(this.randomVal);
+                }
+            }
+
+        })
+        app.mount('#app') 
+    </script>
+</body>
+
+</html>
