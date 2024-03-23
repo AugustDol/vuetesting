@@ -42,9 +42,17 @@ const app = Vue.createApp({
     }
   }
 })
-```
 
 app.mount('#app')
+```
+
+This code creates a Vue application that displays the text "Hello, Vue!" on the webpage.
+
+The HTML part sets up a `div` with the id `app` and a paragraph element inside it. The `{{ message }}` is a placeholder for data from the Vue instance.
+
+The JavaScript part creates a new Vue application and mounts it to the `#app` div. It defines a data property `message` with the value "Hello, Vue!".
+
+The `{{ message }}` in the HTML will be replaced by "Hello, Vue!", so the paragraph will display "Hello, Vue!".
 
 ## v-bind Directive
 The `v-bind` directive is used in Vue.js to bind an attribute of an HTML element to an expression. It dynamically updates the attribute whenever the value of the expression changes.
@@ -78,6 +86,14 @@ css:
 }
 ```
 
+In the HTML, a `div` with the id `app` is created, and inside it, another `div` is created with its class bound to the vueClass data property.
+
+In the JavaScript, a Vue application is created with a data property `vueClass` set to `"pinkBG"`. The application is then mounted to the `#app` div.
+
+In the CSS, a class `.pinkBG` is defined that sets the background color of an element to light pink.
+
+So, the inner `div` will have the class `pinkBG` and its background color will be light pink.
+
 ## v-if Directive
 
 The `v-if` directive is used to conditionally render a block of HTML based on the value of an expression. It works by evaluating the expression and only rendering the block if the expression evaluates to true.
@@ -90,6 +106,7 @@ html:
     <p>This message will only be shown if showMessage is true.</p>
 </div>
 ```
+
 js:
 ```javascript
 const app = Vue.createApp({
@@ -100,6 +117,8 @@ const app = Vue.createApp({
   }
 })
 ```
+
+This is self-explainatory.
 
 ## v-show Directive
 
@@ -133,7 +152,7 @@ js:
 ## more comming soon...
 
 to see where i left off click 
-[HERE](https://www.w3schools.com/vue/vue_v-show.php).
+[HERE](https://www.w3schools.com/vue/vue_v-for.php).
 
 :)
 
