@@ -14,6 +14,7 @@ html:
   <p>{{ message }}</p>
 </div>
 ```
+js:
 ```js
 const app = Vue.createApp({
   data() {
